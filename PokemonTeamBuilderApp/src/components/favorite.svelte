@@ -5,10 +5,21 @@
     
     let is_favorited = false;
 
+    if($favorites.favs.indexOf(id) != -1)is_favorited = true;
+
+    $: {
+        updateToggle(id);
+    }
+    
     favorites.subscribe((value) =>{
         if(value.favs.indexOf(id) != -1)is_favorited = true;
         else is_favorited = false;
     });
+
+    function updateToggle(id){
+        if($favorites.favs.indexOf(id) != -1)is_favorited = true;
+        else is_favorited = false;
+    }
 
     function toggle() {
         if (is_favorited) {
