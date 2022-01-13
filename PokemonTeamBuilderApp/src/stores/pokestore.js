@@ -12,7 +12,7 @@ pokemon.subscribe((value) => {
 });
 
 const fetchAllPokemon = async () => {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=1118`;
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=898`;
     const res = await fetch(url);
     const data = await res.json();
     const loadedPokemon = data.results.map((data, index) => {
