@@ -1,6 +1,15 @@
 import { writable } from "svelte/store";
+import { browser } from "$app/env";
 
-export const pokemon = Writable([]);
+const allPokemon = browser ? JSON.parse(window.localStorage.getItem('allPokemon')) ?? [] : [];
+console.log(allPokemon[1]);
+export const pokemon = writable(allPokemon);
+
+pokemon.subscribe((value) => {
+    if (browser) {
+        window.localStorage.setItem('allPokemon', JSON.stringify(value));
+    }
+});
 
 const fetchAllPokemon = async () => {
     const url = `https://pokeapi.co/api/v2/pokemon?limit=1118`;
@@ -16,4 +25,6 @@ const fetchAllPokemon = async () => {
 
     pokemon.set(loadedPokemon);
 }
-fetchAllPokemon();
+if (allPokemon.length == 0) {
+    fetchAllPokemon();
+}
