@@ -3,9 +3,9 @@
     @tailwind components;
     @tailwind utilities;
 </style>
-<div class="dark ">
+<div class="dark">
     <div class="bg-white dark:bg-gray-900 dark:text-white">
-        <div class="p-8 max-w-7xl mx-auto">
+        <div class="p-8 max-w-7xl mx-auto min-h-screen">
             <main>
                 <slot />
             </main>
