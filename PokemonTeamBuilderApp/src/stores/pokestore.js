@@ -2,7 +2,6 @@ import { writable } from "svelte/store";
 import { browser } from "$app/env";
 
 const allPokemon = browser ? JSON.parse(window.localStorage.getItem('allPokemon')) ?? [] : [];
-console.log(allPokemon[1]);
 export const pokemon = writable(allPokemon);
 
 pokemon.subscribe((value) => {

@@ -1,5 +1,7 @@
 <script>
     export let poke;
+
+    import Favorite from "../components/favorite.svelte";
 </script>
 
 <a href={`/pokemon/${poke.id}`} 
@@ -8,4 +10,5 @@
         flex flex-col items-center">
     <img class="h-40 w-40" src="{poke.image}" alt="{poke.name}">
     <h2 class="uppercase text-2xl">{poke.id}. {poke.name}</h2>
+    <Favorite id={poke.id} />
 </a>
