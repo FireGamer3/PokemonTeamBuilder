@@ -1,7 +1,4 @@
 <script>
-import { each } from "svelte/internal";
-
-
     export let stats;
 </script>
 

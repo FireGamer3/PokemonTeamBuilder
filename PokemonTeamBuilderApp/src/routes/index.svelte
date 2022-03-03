@@ -16,7 +16,7 @@
 </script>
 
 
-<h1 class="text-4xl text-center py-8 uppercase">Pokemon Team Builder</h1>
+<h1 class="text-4xl text-center py-8 uppercase">All Pokemon</h1>
 
 <input type="text" class="w-full rounded-md text-lg p-4 border-2 border-gray-200 dark:bg-gray-600" bind:value={searchTerm} placeholder="Search Pokemon"/>
 

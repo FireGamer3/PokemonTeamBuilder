@@ -1,8 +1,9 @@
 <script context="module">
     export async function load({params}) {
         const id = params.id;
-        const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+        const url = `https://pokeapi.co/api/v2/pokemon/${parseInt(id)}`;
         const res = await fetch(url);
+        console.log(res);
         const data = await res.json();
         return { props: {poke: data, id}};
     }
